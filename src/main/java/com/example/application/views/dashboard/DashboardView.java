@@ -34,6 +34,10 @@ public class DashboardView extends Main {
         addClassName("dashboard-view");
         Chart chart = createViewEvents();
         add(chart);
+        Button initialDrawChartButton = new Button("drawChart with reset", e -> {
+            chart.drawChart(true);
+        });
+        add(initialDrawChartButton);
         Button toggleTooltipAndRedrawButton = new Button("Toggle tooltip and redraw");
         toggleTooltipAndRedrawButton.addClickListener(e -> {
             Boolean enabled = chart.getConfiguration().getTooltip().getEnabled();
